@@ -4,8 +4,8 @@ import Link from "next/link";
 import { PatientForm } from "@/components/forms/PatientForm";
 import { PasskeyModal } from "@/components/PasskeyModal";
 
-const Home = ({ searchParams }: SearchParamProps) => {
-  const isAdmin = searchParams?.admin === "true";
+const Home = async ({ searchParams }: SearchParamProps) => {
+  const isAdmin = (await searchParams?.admin) === "true";
 
   return (
     <div className="flex h-screen max-h-screen">
@@ -35,7 +35,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
       </section>
 
       <Image
-        src="/assets/images/onboarding-img.png"
+        src="/assets/images/image2.jpg"
         height={1000}
         width={1000}
         alt="patient"
